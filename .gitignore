@@ -1,0 +1,31 @@
+# Ignorar o arquivo application.properties
+
+# Ignorar o diretório de configurações de perfil, se aplicável
+/src/main/resources/application-{perfil}.properties
+
+# Ignorar todos os arquivos .properties no diretório de recursos (se preferir)
+/src/main/resources/*.properties
+
+# Ignorar os diretórios de saída gerados pelo Maven/Gradle
+/target/
+/build/
+/bin/
+/out/
+
+# Ignorar arquivos de log (se aplicável)
+/log/
+*.log
+
+# Ignorar arquivos de compilação e IDE
+*.class
+*.jar
+*.war
+*.ear
+/.idea/
+/.vscode/
+
+# Ignorar arquivos temporários
+*.tmp
+*.swp
+*~
+.DS_Store
