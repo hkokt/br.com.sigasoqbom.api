@@ -9,6 +9,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cod;
+
     private String cpf;
     private String nome;
     private String dataNascimento;

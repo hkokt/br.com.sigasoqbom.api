@@ -8,6 +8,7 @@ import com.sigasohqbom.api.dto.AlunoDto;
 import com.sigasohqbom.api.model.Aluno;
 import com.sigasohqbom.api.repository.AlunoRepository;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,8 +22,8 @@ public class AlunoService {
         return alunoRepository.findAll();
     }
 
-    public Aluno selectId(Long id) throws Exception {
-        Optional<Aluno> aluno = alunoRepository.findById(id);
+    public Aluno selectRa(String ra) throws Exception {
+        Optional<Aluno> aluno = Optional.ofNullable(alunoRepository.findByRa(ra));
 
         if (aluno.isEmpty()) {
             throw new Exception("sem registro");
@@ -34,11 +35,12 @@ public class AlunoService {
     public Aluno insert(AlunoDto alunoDto) {
         var alunoModel = new Aluno();
         BeanUtils.copyProperties(alunoDto, alunoModel);
+        alunoModel.setDataIngresso(LocalDate.now());
         return alunoRepository.save(alunoModel);
     }
 
-    public Aluno updateId(Long id, AlunoDto alunoDto) throws Exception {
-        Optional<Aluno> aluno = alunoRepository.findById(id);
+    public Aluno updateRa(String ra, AlunoDto alunoDto) throws Exception {
+        Optional<Aluno> aluno = Optional.ofNullable(alunoRepository.findByRa(ra));
 
         if (aluno.isEmpty()) {
             throw new Exception("sem registro");
@@ -50,8 +52,8 @@ public class AlunoService {
         return alunoRepository.save(alunoModel);
     }
 
-    public String deleteId(Long id) throws Exception {
-        Optional<Aluno> aluno = alunoRepository.findById(id);
+    public Aluno deleteRa(String ra) throws Exception {
+        Optional<Aluno> aluno = Optional.ofNullable(alunoRepository.findByRa(ra));
 
         if (aluno.isEmpty()) {
             throw new Exception("sem registro");
@@ -59,7 +61,7 @@ public class AlunoService {
 
         var alunoModel = aluno.get();
         alunoRepository.delete(alunoModel);
-        return id + "";
+        return alunoModel;
     }
 
 }

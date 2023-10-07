@@ -17,18 +17,18 @@ import java.util.List;
 @RequestMapping("/alunos")
 public class AlunoController {
 
-	@Autowired
-	private AlunoService alunoService;
+    @Autowired
+    private AlunoService alunoService;
 
-	@GetMapping
-	public ResponseEntity<List<Aluno>> getAll() {
-		return ResponseEntity.status(HttpStatus.OK).body(alunoService.selectAll());
-	}
+    @GetMapping
+    public ResponseEntity<List<Aluno>> getAll() {
+        return ResponseEntity.status(HttpStatus.OK).body(alunoService.selectAll());
+    }
 
-	@GetMapping("/{cod}")
-	public ResponseEntity<Object> getId(@PathVariable(value = "cod") Long cod) {
+	@GetMapping("/{ra}")
+	public ResponseEntity<Object> getRa(@PathVariable(value = "ra") String ra) {
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(alunoService.selectId(cod));
+			return ResponseEntity.status(HttpStatus.OK).body(alunoService.selectRa(ra));
 		} catch (Exception e) {
 			if (e.getMessage().contains("sem registro")) {
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errors.NOT_FOUND);
@@ -38,35 +38,35 @@ public class AlunoController {
 		}
 	}
 
-	@PostMapping
-	public ResponseEntity<Aluno> insert(@RequestBody @Valid AlunoDto alunoDto) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(alunoService.insert(alunoDto));
-	}
+    @PostMapping
+    public ResponseEntity<Aluno> insert(@RequestBody @Valid AlunoDto alunoDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(alunoService.insert(alunoDto));
+    }
 
-	@PutMapping("/{cod}")
-	public ResponseEntity<Object> updateId(@PathVariable(value = "cod") Long cod,
-			@RequestBody @Valid AlunoDto alunoDto) {
-		try {
-			return ResponseEntity.status(HttpStatus.OK).body(alunoService.updateId(cod, alunoDto));
-		} catch (Exception e) {
-			if (e.getMessage().contains("sem registro")) {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errors.NOT_FOUND);
-			} else {
-				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Errors.INTERNAL_SERVER_ERROR);
-			}
-		}
-	}
+    @PutMapping("/{ra}")
+    public ResponseEntity<Object> updateRa(@PathVariable(value = "ra") String ra,
+                                           @RequestBody @Valid AlunoDto alunoDto) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(alunoService.updateRa(ra, alunoDto));
+        } catch (Exception e) {
+            if (e.getMessage().contains("sem registro")) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errors.NOT_FOUND);
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Errors.INTERNAL_SERVER_ERROR);
+            }
+        }
+    }
 
-	@DeleteMapping("/{cod}")
-	public ResponseEntity<Object> deleteId(@PathVariable(value = "cod") Long cod) {
-		try {
-			return ResponseEntity.status(HttpStatus.OK).body("{cod_deletado: \"" + alunoService.deleteId(cod) + "\"}");
-		} catch (Exception e) {
-			if (e.getMessage().contains("sem registro")) {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errors.NOT_FOUND);
-			} else {
-				return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Errors.INTERNAL_SERVER_ERROR);
-			}
-		}
-	}
+    @DeleteMapping("/{ra}")
+    public ResponseEntity<Object> deleteId(@PathVariable(value = "ra") String ra) {
+        try {
+            return ResponseEntity.status(HttpStatus.OK).body(alunoService.deleteRa(ra));
+        } catch (Exception e) {
+            if (e.getMessage().contains("sem registro")) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errors.NOT_FOUND);
+            } else {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Errors.INTERNAL_SERVER_ERROR);
+            }
+        }
+    }
 }

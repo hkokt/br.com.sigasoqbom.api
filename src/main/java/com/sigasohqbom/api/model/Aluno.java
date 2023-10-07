@@ -3,10 +3,15 @@ package com.sigasohqbom.api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @DiscriminatorValue("aluno")
 @Data
 public class Aluno extends Usuario {
+
+    @Column(name = "ra", unique = true)
     private String ra;
     private String nomeSocial;
     private String emailPessoal;
@@ -14,8 +19,6 @@ public class Aluno extends Usuario {
     private String instituicaoConclusao2grau;
     private int pontuacaoVestibular;
     private int posicaoVestibular;
-    private int anoDeIngresso;
-    private int semestreDeIngresso;
-    private int semestreLimite;
-    private int anoLimite;
+    private LocalDate dataIngresso;
+
 }
