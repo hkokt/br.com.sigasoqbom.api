@@ -14,7 +14,7 @@ function cadastrar() {
 		curso: document.getElementById("curso").value
 	};
 
-	fetch('http://localhost:8080/alunos', {
+	fetch('http://localhost:8080/alunos/${dados.ra}' , {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
