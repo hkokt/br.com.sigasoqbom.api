@@ -1,11 +1,3 @@
-# Ignorar o arquivo application.properties
-
-# Ignorar o diretório de configurações de perfil, se aplicável
-/src/main/resources/application-{perfil}.properties
-
-# Ignorar todos os arquivos .properties no diretório de recursos (se preferir)
-/src/main/resources/*.properties
-
 # Ignorar os diretórios de saída gerados pelo Maven/Gradle
 /target/
 /build/
