@@ -30,6 +30,6 @@ function cadastrar() {
 		});
 
 
-	alert(`RA: ${dados.ra}\nCPF: ${dados.cpf}\nNome: ${dados.nome}\nNome Social: ${dados.nomesocial}\nData de Nascimento: ${dados.nascimento}\nE-mail: ${dados.email}\nInstituição: ${dados.instituicao}\nConclusão: ${dados.conclusao}\nPontuação: ${dados.pontuacao}\nPosição: ${dados.posicao}\nCurso: ${dados.curso}`);
+	alert(`RA: ${dados.ra} | CPF: ${dados.cpf} | Nome: ${dados.nome}\nNome Social: ${dados.nomesocial} | Data de Nascimento: ${dados.nascimento}\nE-mail: ${dados.email} | Instituição: ${dados.instituicao} | Conclusão: ${dados.conclusao}\nPontuação: ${dados.pontuacao}\nPosição: ${dados.posicao}\nCurso: ${dados.curso}`);
 
 }
