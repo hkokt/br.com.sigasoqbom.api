@@ -1,0 +1,90 @@
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="form.css">
+    <script src="form.js"></script>
+    <title></title>
+</head>
+
+<body>
+
+    <form name="formDisciplina" id="formDisciplina" method="post" enctype="multipart/form-data" action="a.html" autocomplete="on">
+
+        <div class="sticky">
+            <a href="index.php">
+                <input type="button" class="btn floatL" value="Voltar">
+            </a>
+            <img id="btnTheme" onclick="invertTheme()" class="icon btn floatR" />
+        </div>
+
+        <div class="centerItems">
+            <a href="aluno.html"><input type="button" class="btn" value="Aluno"></a>
+            <a href="professor.html"><input type="button" class="btn" value="Professor"></a>
+            <a href="disciplina.html"><input type="button" class="btn" value="Disciplina" disabled></a>
+            <a href="curso.html"><input type="button" class="btn" value="Curso"></a>
+        </div>
+
+        <div class="formulario">
+
+            <h1>Matricular Disciplina</h1>
+
+            <label for="nome" class="req">Nome</label>
+            <br>
+            <input id="nome" type="text" class="formInput" name="nomeDisciplina" maxlength="100" required />
+            <br>
+
+            <label for="horas" class="req">Horas Semanais</label>
+            <br>
+            <input id="horas" type="number" class="formInput" name="horasDisciplina" required/>
+            <br>
+
+            <label for="curso" class="req">Curso</label>
+            <br>
+            <select id="curso" class="formInput" name="cursoDisciplina" required>
+                <option value="" selected disabled hidden>Escolha o Curso</option>
+                <option>Análise e Desenvolvimento de Sistemas</option>
+                <option>Informática para Gestão de Negócios</option>
+                <option>Comércio Exterior</option>
+                <option>Desenvolvimento de Produtos Plásticos</option>
+                <option>Desenvolvimento de Software Multiplataforma</option>
+                <option>Gestão de Recursos Humanos</option>
+                <option>Gestão Empresarial</option>
+                <option>Gestão Empresarial EAD</option>
+                <option>Logística</option>
+                <option>Polímeros</option>
+            </select>
+            <br>
+
+            <label for="semestre" class="req">Semestre</label>
+            <br>
+            <select id="semestre" class="formInput" name="semestreDisciplina" required>
+                <option value="" selected disabled hidden>Escolha o Semestre</option>
+                <option>1º Semestre</option>
+                <option>2º Semestre</option>
+                <option>3º Semestre</option>
+                <option>4º Semestre</option>
+                <option>5º Semestre</option>
+                <option>6º Semestre</option>
+            </select>
+            <br>
+
+            <div class="centerItems">
+                <input type="button" class="btn" value="Inserir">
+                <input type="button" class="btn" value="Atualizar">
+                <input type="button" class="btn" value="Deletar">
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>
