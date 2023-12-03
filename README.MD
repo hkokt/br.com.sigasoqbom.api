@@ -1,36 +1,37 @@
-### Post em "/disciplinas"
+## post curso
 
         {
-            "nome":"lab de engenharia",
-            "qtdHorasSemanais": 80,
-            "semestre": 6
+            "nome": "Nome do Curso",
+            "cargaHoraria": 60,
+            "sigla": "CURSO01",
+            "enade": 5.00,
+            "turno": "Manhã"
         }
 
-### Post em "/cursos"
+## post aluno
 
-            {
-                "nome" : "Análise e desenvolvimento de sistemas",
-                "cargaHoraria" : 80,
-                "sigla" : "ADS",
-                "enade": 5
-            }
+        {
+          "ra": "1234567892345",
+          "nome": "Fulano de Tal",
+          "dataNasc": "1990-01-01",
+          "nomeSocial": "NomeSocial",
+          "emailPessoal": "fulano@email.com",
+          "dataConc2grau": "2010-01-01",
+          "cpf": "12345678909",
+          "instConc2grau": "Instituição",
+          "ptVestibular": 80,
+          "posVestibular": 90,
+          "emailCorporativo": "fulano@empresa.com",
+          "dataMatricula": "2022-01-15",
+          "dataLimiteMatricula": "2024-12-01",
+          "idCurso": 1
+        }
 
-### Post em "/alunos"
+### post disciplinas
 
-            {
-                "cpf":"44444444444",
-                "nome": "Luis Gustavo",
-                "dataNascimento": "04042002",
-                "emailCorporativo": "luis.gustavo@fatec.sp.gov.br",
-                "ra": "123123123123",
-                "nomeSocial": "nebram",
-                "emailPessoal": "luis@gustavo",
-                "dataConclusao2grau": "12122012",
-                "instituicaoConclusao2grau": "mansão foster para amigos imaginarios",
-                "pontuacaoVestibular": 1,
-                "posicaoVestibular": 40000,
-                "anoDeIngresso": 2021,
-                "semestreDeIngresso": 1,
-                "semestreLimite": 10,
-                "anoLimite": 2026
-            }
+        {
+          "nome": "Nome do Curso",
+          "qtdAulas": 30,
+          "semestre": 2,
+          "idCurso": 1
+        }
