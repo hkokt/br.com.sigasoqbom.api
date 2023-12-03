@@ -1,8 +1,6 @@
 package com.sigasohqbom.api.model;
 
-import java.math.BigDecimal;
-
-import com.sigasohqbom.api.model.pk.MatriculaPk;
+import com.sigasohqbom.api.model.pk.ChamadaPk;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -20,8 +18,8 @@ import lombok.Data;
 @Entity
 @Table
 @Inheritance(strategy = InheritanceType.JOINED)
-@IdClass(MatriculaPk.class)
-public class Matricula {
+@IdClass(ChamadaPk.class)
+public class Chamada {
 	@Id
 	@ManyToOne(cascade = CascadeType.ALL, targetEntity = Aluno.class, fetch = FetchType.LAZY)
 	@JoinColumn(name = "raAluno")
@@ -39,16 +37,4 @@ public class Matricula {
 	@Id
 	@Column(nullable = false)
 	private int semestre;
-	
-	@Column(nullable = false, length = 30)
-	private String situacao;
-	
-	@Column(precision = 10, scale = 2)
-	private BigDecimal n1;
-	
-	@Column(precision = 10, scale = 2)
-	private BigDecimal n2;
-	
-	@Column(precision = 10, scale = 2)
-	private BigDecimal n3;
 }
